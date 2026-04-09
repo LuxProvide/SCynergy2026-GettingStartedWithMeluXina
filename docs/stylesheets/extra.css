@@ -65,3 +65,10 @@ details.no-details:not([open]) > * {
 details.no-details:not([open]) summary {
   display: block;
 }
+
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+

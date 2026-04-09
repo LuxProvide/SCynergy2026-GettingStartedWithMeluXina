@@ -6,8 +6,7 @@ This training is given in the context of the [Scynergy 2026 event](https://www.s
 
 It has been developed by the **Supercomputing Application Services** group at [**LuxProvide**](https://luxprovide.lu) in the context of the [**EPICURE project**](https://epicure-hpc.eu/).
 
-![EPICURE](./assets/logo_epicure.png){ width="420" }
-![LuxProvide](./assets/logo_luxprovide.png){ width="320" }
+![EPICURE](./assets/logo_epicure.png){ width="420" } ![LuxProvide](./assets/logo_luxprovide.png){ width="320" }
 
 ## Objectives
 
@@ -41,7 +40,7 @@ Today's training is composed of:
 
 👉 Click on the image to download the slides of the presentation.
 
-[![Slides](images/slides.png){ width="640" }](files/Getting_Started_with_MeluXina.pdf)
+[![Slides](images/slides.png){ width="640" .center }](files/Getting_Started_with_MeluXina.pdf)
 
 !!! abstract "Presentation outline"
 
@@ -145,59 +144,7 @@ ssh meluxina
 
 If the connection is successful, you should see the MeluXina welcome banner:
 
-<pre style="font-size: 0.8rem; background: #f5f5f5; padding: 1rem; border-radius: 4px;">
-        Welcome to the Luxembourg - EuroHPC supercomputer
-
-         ████     ████          ██         ██     ██ ██
-        ░██░██   ██░██         ░██        ░░██   ██ ░░
-        ░██░░██ ██ ░██  █████  ░██ ██   ██ ░░██ ██   ██ ███████   ██████
-        ░██ ░░███  ░██ ██░░░██ ░██░██  ░██  ░░███   ░██░░██░░░██ ░░░░░░██
-        ░██  ░░█   ░██░███████ ░██░██  ░██   ██░██  ░██ ░██  ░██  ███████
-        ░██   ░    ░██░██░░░░  ░██░██  ░██  ██ ░░██ ░██ ░██  ░██ ██░░░░██
-        ░██        ░██░░██████ ███░░██████ ██   ░░██░██ ███  ░██░░████████
-        ░░         ░░  ░░░░░░ ░░░  ░░░░░░ ░░     ░░ ░░ ░░░   ░░  ░░░░░░░░
-
-    .-----------------------------------------------------------------------------.
-    | You are on a MeluXina login node                                            |
-    |-----------------------------------------------------------------------------|
-    |                       System information: Compute                           |
-    |-----------------------------------------------------------------------------|
-    | Nodes | CPU                     | RAM    | Accelerator              | Disk  |
-    |-------|-------------------------|--------|--------------------------|-------|
-    | 573N  | 2x AMD 7H12: 128c @2.6G |  512GB | -                        | -     |
-    | 200N  | 2x AMD 7452:  64c @2.3G |  512GB | 4x NVIDIA A100-40        | 1.92T |
-    |  20N  | 2x AMD 7452:  64c @2.3G |  512GB | 2x Intel Stratix 10MX-16 | 1.92T |
-    |  20N  | 2x AMD 7H12: 128c @2.6G | 4096GB | -                        | 1.92T |
-    |-----------------------------------------------------------------------------|
-    |                       System information: Data                              |
-    |-----------------------------------------------------------------------------|
-    | Tier           | Capacity | Speed   | Type | Location on compute/login      |
-    |----------------|----------|---------|------|--------------------------------|
-    | Scratch        | 0.6PB    | 400GB/s | NVMe | /project/scratch               |
-    | Home/Project   | 12.5PB   | 180GB/s | HDD  | /home/users, /project/home     |
-    | Backup         | 7.5PB    | 30GB/s  | HDD  | -                              |
-    |-----------------------------------------------------------------------------|
-    |                       System information: Interconnect                      |
-    |-----------------------------------------------------------------------------|
-    | Fabric: Infiniband HDR, 200Gbps, DragonFly+ topology                        |
-    | Links : 1x on CPU nodes, 2x on GPU, FPGA & LargeMemory nodes                |
-    |-----------------------------------------------------------------------------|
-    |                       System information: Software                          |
-    |-----------------------------------------------------------------------------|
-    | Production software stack: 2024.1                                           |
-    |                                                                             |
-    | Modules system: LMod, use `module av` on nodes to discover the environment  |
-    |-----------------------------------------------------------------------------|
-    |                           Center information                                |
-    |-----------------------------------------------------------------------------|
-    | News & Events      : luxprovide.lu                                          |
-    | Documentation      : docs.lxp.lu                                            |
-    | System status      : status.lxp.lu                                          |
-    | Support            : servicedesk.lxp.lu, servicedesk@lxp.lu                 |
-    |-----------------------------------------------------------------------------|
-    | LinkedIn & Twitter : @luxprovide #meluxina @EuroHPC_JU                      |
-    °_____________________________________________________________________________°
-</pre>
+![MeluXina welcome banner](images/meluxina_banner.png){: .center}
 
 The shell prompt (last line on the terminal) should indicate that you're correctly connected to the MeluXina login node.
 
