@@ -9,14 +9,14 @@ It goes to three main steps:
 2. [**Command line** access using SSH](#command-line-access-using-ssh-key)
 3. [**Web-portal** access](#web-portal-access)
 
-![Command Line](images/command_line_interface.png){ width="560"}
-![Web-portal](images/webportal_interface.png){ width="560"}
+![Command Line](images/command_line_interface.png){ width="460"}
+![Web-portal](images/webportal_interface.png){ width="460"}
 
 ---
 
 ##  Setup your service desk account
 
-![Onboarding email](images/onboarding_email.png){ width="720" align="right" }
+![Onboarding email](images/onboarding_email.png){ width="520" align="right" }
 
 If this the first time that you're accessing MeluXina, you've received an email with your login information.
 This email (example on the right) includes two important information to setup your account:
@@ -114,7 +114,7 @@ If the connection is successful, you should see the MeluXina welcome banner:
 
 ![MeluXina welcome banner](images/meluxina_banner.png){: .center}
 
-The shell prompt (last line on the terminal) should indicate that you're correctly connected to the MeluXina login node.
+The shell prompt (last line on the terminal) should indicate that you're correctly connected to the MeluXina login  node (`login02` or `login03`) as the user `u10XXXX`.
 
 
 ??? failure "Failing to connect?"
