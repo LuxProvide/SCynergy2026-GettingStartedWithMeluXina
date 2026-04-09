@@ -2,8 +2,6 @@
 
 # Hands-on: Configuring your access to MeluXina
 
-
-
 This part will help you to configure your access to MeluXina.
 It goes to three main steps:
 
@@ -14,14 +12,28 @@ It goes to three main steps:
 ![Command Line](images/command_line_interface.png){ width="560"}
 ![Web-portal](images/webportal_interface.png){ width="560"}
 
+---
+
 ##  Setup your service desk account
 
+![Onboarding email](images/onboarding_email.png){ width="720" align="right" }
+
+If this the first time that you're accessing MeluXina, you've received an email with your login information.
+This email (example on the right) includes two important information to setup your account:
+
+- Your **account username**, in the format `u10XXXX`
+- Your **token** (temporary password), in the format `123456`
+
+Then, you have to follow the **link in the email**, use your temporary credential to login and setup a new strong password. Make sure to remember your username and this password as you will need them later on.
+
+!!! info "Online Documentation"
+
+    [Get your service desk password](https://docs.lxp.lu/first-steps/connecting/#get-your-service-desk-password)
+
+
+---
+
 ## Command line access using SSH key
-
-The Command Line Interface (CLI) with Secure Shell (SSH)) is the de-facto standard to access remote Linux machines and supercomputing platforms. 
-It is fast, lightweight, and secure. The security relies on an SSH key pair (public/private keys).
-
-![SSH Access to a Supercomputer](images/ssh_access.png)
 
 !!! info "SSH setup is not stricly required, but recommended"
 
@@ -29,22 +41,24 @@ It is fast, lightweight, and secure. The security relies on an SSH key pair (pub
     
     If the SSH access is too complicated to setup, the command line interface is also available in the [web-portal](#web-portal-access).
 
+The Command Line Interface (CLI) with Secure Shell (SSH) is the de-facto standard to access remote Linux machines and supercomputing platforms. 
+It is fast, lightweight, and secure. The security relies on an SSH key pair (public/private keys) which is tied to a specific machine (e.g., your laptop). In other words, the SSH key setup allows to identify and and grant access for to a specific machi practice, it means the 
 
 ### Setup of SSH Access
 
 Configuring your SSH access to MeluXina requires the following steps that have to be done once for all:
 
-- [Generating an SSH key](https://docs.lxp.lu/first-steps/connecting/#generating-an-ssh-key-pair)
-- [Uploading your public SSH key](https://docs.lxp.lu/first-steps/connecting/#upload-your-public-ssh-key)
-- [Connecting to MeluXina](https://docs.lxp.lu/first-steps/connecting/#connect-to-meluXina)
+1. [Generating an SSH key](https://docs.lxp.lu/first-steps/connecting/#generating-an-ssh-key-pair)
+2. [Uploading your public SSH key](https://docs.lxp.lu/first-steps/connecting/#upload-your-public-ssh-key)
 
-!!! tip
+!!! tips
 
-    Working on Linux or MacOS is a great advantage for this as most of the tools are already available and follow the standard configuration.
-
-    If you work on Windows, it is recommended to install [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/about)
-    and set up an [Ubuntu subsystem from the Microsoft Store](https://apps.microsoft.com/detail/9pdxgncfsczv?hl=en-US&gl=US).
-    Thus, you can directly work on Linux within Windows.
+    This setup is slightly different depending on if you work on Linux/MacOS or Windows.
+    In the documentation page, make sure to check the instructions specific to your system by clicking on the right tab. 
+    
+    For example, if you use Windows:
+    
+    ![OS specific instructions](images/os_specific_instructions.png)   
 
 ??? info "Guidelines to Handle Your SSH Keys"
 
@@ -55,32 +69,33 @@ Configuring your SSH access to MeluXina requires the following steps that have t
     - The private key is meant to be **private**: Never share it with anyone! Don't send it by email! (not even to yourself) Don't put it on a Cloud drive (Dropbox, Google Drive, MS OneDrive, etc.).
     - Generate one pair of keys for each of your `account@machine`. Don't try to copy your keys around. It makes it easier to block an access if it gets compromised.
     - Protect your SSH key with a passphrase. Without that, if your laptop gets stolen, your accesses to remote machines get compromised too! Instead, learn to use SSH Agent so you need to type your passphrase only once after booting your laptop.
-    - You're not allowed to share your HPC access with another person. If you need to do it for some reason (e.g. debugging issues specific to your account), you should NOT share your private SSH key. Instead, you should authorize the SSH public of the other person to access your account (via IPA or `.ssh/authorized_keys`)
+    - You're not allowed to share your HPC access with another person. If you need to do it for some reason (e.g. debugging issues specific to your account), you should NOT share your private SSH key. Instead, you should authorize the SSH public of the other person to access your account (via the service desk or your `~/.ssh/authorized_keys`)
 
-### Connection to HPC Access
+### Connection to the MeluXina login node
 
-When using a supercomputer, you will usually first connect to a login or **access node**.
+When using a supercomputer, you will usually first connect to a **login** or **access node**.
 From this machine, you can check your files, disk quota, and computing usage.
 It is intended to be used by the user to prepare computing jobs and scripts and then submit them to the job scheduler.
 
-Because the access node is shared by all the users of the platform,
-it should not be used to compile and install your software and it should definitely not be used to run any memory or computing-intensive task.
+![SSH Access to a Supercomputer](images/ssh_access.png)
 
-This is an excerpt of the [Acceptable Use Policy of MeluXina](https://docs.lxp.lu/policies/aup/) that you accepted to get an account on the platform:
+??? info
 
-> The login (access) nodes of the MeluXina cluster are reserved for data transfer
-> to/from the clusters, preparation of job submissions to the queueing system and
-> checking the status of computational jobs. The login nodes must not be used for
-> compute or I/O bound processes. Processes inappropriate to execute on the login
-> nodes may be killed and the user notified.
+    Because the access node is shared by all the users of the platform, it should not be used to compile and install your software and it should definitely not be used to run any memory or computing-intensive task. Usually, there are some guardrails implemented on the access node to prevent unwanted usage. For example, there is no compiler installed or the `module` command is not available.
 
-Usually, there are some guardrails implemented on the access node to prevent unwanted usage. For example, there is no compiler installed or the `module` command is not available.
+You're now ready to connect to MeluXina. Follow the detailed instructions of the documentation:
 
-To connect to MeluXina, you will use the SSH command with your credentials:
+- [Connect to MeluXina](https://docs.lxp.lu/first-steps/connecting/#connect-to-meluxina)
 
-```bash
-ssh '<your-user-ID>'@login.lxp.lu -p 8822 -i ~/.ssh/id_ed25519_mlux
-```
+!!! tips
+
+    Once again, this step is slightly different depending on if you work on Linux/MacOS or Windows.
+    In the documentation page, make sure to check the instructions specific to your system by clicking on the right tab. 
+    
+    For example, if you use Windows:
+    
+    ![OS specific instructions](images/os_specific_instructions.png)   
+
 
 If you have configured your SSH config file with an alias (recommended), you can simply connect with:
 
@@ -108,12 +123,11 @@ The shell prompt (last line on the terminal) should indicate that you're correct
 
     1. Any error message? Check carefully all the output lines on your terminal, and try to address the first one.
     2. Need more information from SSH? Add the `-v` option (like verbose) after the `ssh` command. That will give you more details about the connect process. You can add more `v` to get more detailed messages.
-    3. Call me ! 👨‍🏫 This time I will help you getting this right, next time you're on your own 🙂
-
+    3. Call for help! 👨‍🏫 The LuxProvide team will help you getting this right. 🙂
 
 You made it! You're connected to the MeluXina supercomputer.
 
-
+---
 
 ## Web-portal access
 
