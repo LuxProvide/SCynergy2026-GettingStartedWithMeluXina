@@ -5,7 +5,10 @@ site_author: Xavier Besseron
 site_dir: public
 
 nav:
-    - Getting Started with MeluXina: "index.md"
+    - Getting Started with MeluXina: index.md
+    - Configuring your access to MeluXina: connections_meluxina.md
+    - Urban wind simulation and visualization: urban_wind_simulation.md
+    - PyTorch notebook with JupyterLab: pytorch_notebook.md
 
 exclude_docs: |
     *.backup
